@@ -1,6 +1,7 @@
 import { specalist } from "./data.js";
 import { useState } from "react";
 import SpecialistList from "./choose-specialist";
+import React from 'react';
 
 export default function List() {
   const [specId, setSpecId] = useState("all");
