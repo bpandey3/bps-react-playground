@@ -1,30 +1,23 @@
-import { specalist } from "./data.js";
-import { useState } from "react";
-import SpecialistList from "./choose-specialist";
 import React from 'react';
 import Apicall from './api-call-example.js';
+import Names from './input-box-example.js';
+import Scientist from './scientist.js';
+import Header from './header.js';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 export default function List() {
-  const [specId, setSpecId] = useState("all");
-
 
   return (
-    <div>
-      <h1>
-        Select Speicalist{" "}
-        {specId.slice(0, 1).toUpperCase() + specId.slice(1, specId.length)}
-      </h1>
-      <select value={specId} onChange={(e) => setSpecId(e.target.value)}>
-        {specalist.map((sp) => (
-          <option key={sp.id} value={sp.value}>
-            {sp.value.slice(0, 1).toUpperCase() +
-              sp.value.slice(1, sp.value.length)}
-          </option>
-        ))}
-      </select>
-      <SpecialistList spec={specId} />
-      <Apicall />
-    </div>
+
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Header />} />
+        <Route path="/home" element={<Names />} />
+        <Route path="/scientist" element={<Scientist />} />
+        <Route path="/apicall" element={<Apicall />} />
+      </Routes>
+    </BrowserRouter>
+
   );
 
 
