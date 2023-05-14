@@ -2,11 +2,13 @@ import { specalist } from "./data.js";
 import { useState } from "react";
 import SpecialistList from "./choose-specialist";
 import React from 'react';
+import Apicall from './api-call-example.js';
 
 export default function List() {
   const [specId, setSpecId] = useState("all");
 
-  const specialistList = (
+
+  return (
     <div>
       <h1>
         Select Speicalist{" "}
@@ -21,8 +23,10 @@ export default function List() {
         ))}
       </select>
       <SpecialistList spec={specId} />
+      <Apicall />
     </div>
   );
 
-  return specialistList;
+
+
 }
