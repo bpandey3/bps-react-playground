@@ -4,6 +4,7 @@ import Names from './input-box-example.js';
 import Scientist from './scientist.js';
 import Header from './header.js';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import GridExample from './aggrid-example.js'
 
 export default function List() {
 
@@ -13,6 +14,7 @@ export default function List() {
       <Routes>
         <Route path="/" element={<Header />} />
         <Route path="/home" element={<Names />} />
+        <Route path="/aggrid" element={<GridExample />} />
         <Route path="/scientist" element={<Scientist />} />
         <Route path="/apicall" element={<Apicall />} />
       </Routes>
